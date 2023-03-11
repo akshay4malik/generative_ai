@@ -1,0 +1,14 @@
+torch
+streamlit
+streamlit-chat
+langchain
+faiss-cpu
+sentence-transformers
+transformers
+faiss-cpu
+huggingface_hub
+unstructured
+openai
+youtube-transcript-api
+pytube
+google-search-results
