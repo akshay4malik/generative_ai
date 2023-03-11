@@ -1,6 +1,8 @@
 import streamlit as st
 from app import app_1
 from agents_tools import app_2
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 def main():
 
