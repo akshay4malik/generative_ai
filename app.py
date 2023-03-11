@@ -13,7 +13,7 @@ import os
 def app_1():
 
 
-    html_text="""<div style="background-color:green;padding:10px">
+    html_text="""<div style="background-color:blue;padding:10px">
     <h2 style="color:white;text-align:center;">File to chat Q/A demo</h2></div>   
     """
     st.markdown(html_text,unsafe_allow_html=True)
