@@ -28,7 +28,7 @@ def get_chain(vectorstore):
     # llm = HuggingFaceHub(repo_id="google/flan-t5-large", model_kwargs={"temperature":0, "max_length":256},
     #                      huggingfacehub_api_token=hf_api_key)
     
-    llm = OpenAI(temperature=0,openai_api_key=open_api_key)
+    llm = OpenAI(temperature=0,openai_api_key=open_api_key)  #https://platform.openai.com/account/api-keys
 
    
     qa_chain = ChatVectorDBChain.from_llm(
