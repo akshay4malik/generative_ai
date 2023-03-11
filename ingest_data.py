@@ -21,7 +21,7 @@ def embed_doc():
 
         # Load Data to vectorstore
        
-        embeddings=HuggingFaceEmbeddings(model_name=model_name)
+        embeddings=HuggingFaceEmbeddings(model_name=st.secrets["model_name"])
         vectorstore = FAISS.from_documents(documents, embeddings)
 
 
