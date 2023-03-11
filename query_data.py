@@ -2,6 +2,7 @@ from langchain.prompts.prompt import PromptTemplate
 # from langchain.llms import HuggingFaceHub
 from langchain.llms import OpenAI
 from langchain.chains import ChatVectorDBChain
+import streamlit as st
 
 _template = """Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
 
