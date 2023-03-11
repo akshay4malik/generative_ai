@@ -1,5 +1,5 @@
 torch
-streamlit
+streamlit==1.14.0
 streamlit-chat
 langchain
 faiss-cpu
