@@ -13,9 +13,9 @@ def app_2():
         # llm = HuggingFaceHub(repo_id="google/flan-t5-large", model_kwargs={"temperature":0, "max_length":256},
     #                      huggingfacehub_api_token=hf_api_key)
 
-    llm = OpenAI(temperature=0,openai_api_key=open_api_key) # https://huggingface.co/settings/tokens 
+    llm = OpenAI(temperature=0,openai_api_key=st.secrets["open_api_key"]) # https://huggingface.co/settings/tokens 
 
-    tools=load_tools(['serpapi','llm-math'],llm=llm,serpapi_api_key=serpapi_api_key)
+    tools=load_tools(['serpapi','llm-math'],llm=llm,serpapi_api_key=st.secrets["serpapi_api_key"])
 
     agent=initialize_agent(tools,llm,agent='zero-shot-react-description',verbose=True)
 
