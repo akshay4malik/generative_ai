@@ -13,8 +13,8 @@ Standalone question:"""
 CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(_template)
 
 template = """You are an AI assistant for answering questions about the document that you have uploaded.
-You are given the following extracted parts of a long document and a question. Provide a conversational answer in below Answer.
-Also, classify the context into either one of the categories such as "Finance" or "HR" or "General" in below Topic.
+You are given the following extracted parts of a long document and a question. Provide a conversational answer.
+Also, classify the context into either one of the categories such as "Finance" or "HR" or "General".
 If you don't know the answer, just say "Hmm, I'm not sure." Don't try to make up an answer.
 
 Question: {question}
