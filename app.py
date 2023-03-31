@@ -6,7 +6,7 @@ from query_data import _template,CONDENSE_QUESTION_PROMPT,QA_PROMPT,get_chain
 from ingest_data import embed_doc
 import pickle
 import os
-
+import logging
 
 
 
@@ -19,7 +19,6 @@ def app_1():
     st.markdown(html_text,unsafe_allow_html=True)
 
     st.subheader('Explore documents using :blue[chatbot] :fire:.Simply upload your documents and start asking questions to :robot_face:')
-
 
 
 
@@ -49,21 +48,23 @@ def app_1():
         with open("vectorstore.pkl",'rb') as f:
             vectorstore=pickle.load(f)
             st.success('Knowledge Base loaded! :white_check_mark:')
-        
+        logging.info("Loading chain....")
         chain=get_chain(vectorstore)
+        logging.info("Chain Loaded...")
 
     if "generated" not in st.session_state:
         st.session_state["generated"] = []
 
     if "past" not in st.session_state:
         st.session_state["past"] = []
-
+    logging.info("Ready to load user inpput")
     placeholder=st.empty()
     def get_text():
         input_text = st.text_input("You: ", value="", key="input")
         return input_text
 
     user_input = get_text()
+    logging.info("User input loaded...")
     print(st.session_state.input)
 
     if user_input:

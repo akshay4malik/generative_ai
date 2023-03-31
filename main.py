@@ -3,6 +3,7 @@ from app import app_1
 from agents_tools import app_2
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
 
 def main():
 
@@ -10,13 +11,13 @@ def main():
     st.set_page_config(page_title="Generative AI Use Cases",layout="wide",page_icon=':robot:')
 
     tab1, tab2= st.tabs(["File Chat", "General Trivia"])
-
+    #tab1 = st.tabs(["File Chat"])
     with tab1:
         
         app_1()
 
-    with tab2:
-        app_2()
+    # with tab2:
+    #     app_2()
 
 if __name__=="__main__":
     main()
